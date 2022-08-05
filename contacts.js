@@ -10,7 +10,6 @@ const updateContacts = async (contacts) => {
 
 async function listContacts() {
   const data = await fs.readFile(contactsPath);
-  console.log(JSON.parse(data));
   return JSON.parse(data);
 }
 
@@ -41,7 +40,6 @@ async function addContact(name, email, phone) {
   };
   contacts.push(newContact);
   await updateContacts(contacts);
-  console.log(newContact);
   return newContact;
 }
 
